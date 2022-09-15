@@ -55,10 +55,24 @@
     }
   }
 
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   &__right-container {
+    display: none;
     width: 80%;
     min-width: 256px;
     margin: 0 auto;
+    &.active {
+      display: block;
+      animation: 1s fadeEffect;
+    }
   }
 
   &__position {

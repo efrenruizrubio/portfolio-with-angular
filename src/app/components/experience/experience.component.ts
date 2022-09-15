@@ -21,12 +21,7 @@ interface Experience {
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
 
-  animations: [
-    trigger('onChange', [
-      state('changing', style({ opacity: 0 })),
-      transition('* => changing', animate('0.5s')),
-    ]),
-  ],
+  animations: [],
 })
 export class ExperienceComponent implements OnInit {
   works: Array<Experience> = [
@@ -59,6 +54,7 @@ export class ExperienceComponent implements OnInit {
   positionSelectedWork: string = '';
   dateSelectedWork: string = '';
   listElements: Array<string> = [];
+  indexOfSelectedWork: number = -1;
 
   constructor() {
     this.onSelect('axo');
@@ -67,19 +63,9 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {}
 
   onSelect(id: string) {
-    this.listElements = [];
     this.works.forEach((work) => {
-      if (work.id === id) {
-        work.description.forEach((element) => {
-          this.listElements.push(element);
-        });
-        work.isSelected = true;
-        this.showSelectedWork = 'block';
-        this.positionSelectedWork = work.position;
-        this.dateSelectedWork = work.date;
-      } else {
-        work.isSelected = false;
-      }
+      work.isSelected = false;
+      if (work.id === id) work.isSelected = true;
     });
   }
 }
