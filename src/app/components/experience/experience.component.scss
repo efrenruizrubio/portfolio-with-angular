@@ -1,0 +1,73 @@
+.experience {
+  width: 90%;
+  min-width: 288px;
+  margin: 0 auto;
+  text-align: start;
+  &__title {
+    &__number {
+      font-size: 1.6rem;
+      color: var(--primary-green-color);
+    }
+    &__content {
+      font-size: 1.8rem;
+      white-space: nowrap;
+      color: var(--secondary-blue-color);
+    }
+    & hr {
+      width: 100%;
+      border: 1px solid var(--primary-border-color);
+    }
+  }
+  &__slider {
+    width: 100%;
+    min-width: 256px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    &__button {
+      min-width: 150px;
+      height: 50px;
+      margin-bottom: 1rem;
+      color: var(--secondary-grey-color);
+      scroll-snap-align: center;
+      border: none;
+      border-bottom: 1px solid var(--secondary-grey-color);
+      background-color: transparent;
+      &.active {
+        color: var(--primary-green-color);
+        border-bottom: 1px solid var(--primary-green-color);
+      }
+    }
+    &__list {
+      &__element {
+        margin: 2rem 0;
+        line-height: 2.5rem;
+        &::before {
+          content: "▹";
+          font-size: 2rem;
+          color: var(--primary-green-color);
+        }
+      }
+    }
+  }
+
+  &__right-container {
+    width: 80%;
+    min-width: 256px;
+    margin: 0 auto;
+  }
+
+  &__position {
+    margin: 2rem 0;
+    font-size: 1.8rem;
+    color: var(--primary-blue-color);
+  }
+  &__date {
+    font-size: 1.4rem;
+    color: var(--secondary-blue-color);
+  }
+}

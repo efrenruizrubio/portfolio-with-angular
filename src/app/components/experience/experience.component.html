@@ -1,0 +1,34 @@
+<section class="experience">
+  <h2 class="experience__title numbered-title">
+    <span class="experience__title__number">02.&nbsp;&nbsp;</span>
+    <span class="experience__title__content"
+      >Where I've Worked&nbsp;&nbsp;</span
+    >
+    <hr />
+  </h2>
+  <div class="experience__left-container">
+    <div class="experience__slider">
+      <button
+        *ngFor="let work of works"
+        class="experience__slider__button"
+        [id]="work.id"
+        (click)="onSelect(work.id)"
+        [ngClass]="work.isSelected ? 'active' : ''"
+      >
+        {{ work.company }}
+      </button>
+    </div>
+  </div>
+  <div class="experience__right-container" [@onChange]="listElements">
+    <h3 class="experience__position">{{ positionSelectedWork }}</h3>
+    <span class="experience__date">{{ dateSelectedWork }}</span>
+    <ul class="experience__slider__list">
+      <li
+        class="experience__slider__list__element"
+        *ngFor="let element of listElements"
+      >
+        {{ element }}
+      </li>
+    </ul>
+  </div>
+</section>
