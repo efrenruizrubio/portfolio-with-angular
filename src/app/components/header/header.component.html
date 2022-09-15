@@ -1,0 +1,13 @@
+<header class="header">
+  <img class="header__logo" src="assets/icons/logo.svg" alt="Webpage Logo" />
+  <aside *ngIf="screenWidth < 768; else elseHeader">
+    <nav></nav>
+  </aside>
+  <button type="button" class="nav-toggle" aria-label="Abrir menú">
+    <!-- (click)="count()" -->
+    <span class="hamburger"></span>
+  </button>
+  <ng-template #elseHeader>
+    <nav></nav>
+  </ng-template>
+</header>

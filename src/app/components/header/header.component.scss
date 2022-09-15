@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  width: 100%;
+  min-width: 320px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  position: fixed;
+  top: 0;
+  &__logo {
+    width: 48px;
+    height: 48px;
+    z-index: 3;
+  }
+}
+
+.nav-toggle {
+  background: transparent;
+  border: none;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  &,
+  &::before,
+  &::after {
+    width: 2rem;
+    height: 3px;
+    border-radius: 1rem;
+    background-color: var(--secondary-green-color);
+    transition: transform 250ms ease-in-out;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &::before {
+    top: 6px;
+  }
+  &::after {
+    bottom: 6px;
+  }
+}
