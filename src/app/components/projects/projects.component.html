@@ -1,1 +1,9 @@
-<p>projects works!</p>
+<section class="projects">
+  <h2 class="projects__title numbered-title">
+    <span class="projects__title__number">03.&nbsp;</span>
+    <span class="projects__title__content">Some Things I've Built</span>
+  </h2>
+  <div class="projects__list" *ngFor="let project of projects">
+    <app-project [project]="project"></app-project>
+  </div>
+</section>

@@ -9,6 +9,7 @@ import { IntroductionComponent } from './components/introduction/introduction.co
 import { AboutComponent } from './components/about/about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectComponent } from './components/project/project.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     AboutComponent,
     ExperienceComponent,
     ProjectsComponent,
+    ProjectComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
