@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { HeaderService } from '@services/index';
+import { Link } from '@models/link.model';
 
 @Component({
   selector: 'app-header',
@@ -7,32 +9,15 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   screenWidth: number;
-  links: Array<Object> = [
-    {
-      content: 'About',
-      link: '#about',
-    },
-    {
-      content: 'Experience',
-      link: '#experience',
-    },
-    {
-      content: 'Projects',
-      link: '#projects',
-    },
-    {
-      content: 'Contact',
-      link: '#contact',
-    },
-    {
-      content: '',
-      link: '',
-    },
-  ];
+  links: Link[] = [];
+  isMenuOpen: boolean = false;
 
-  constructor() {
+  constructor(private headerService: HeaderService) {
     this.screenWidth = window.innerWidth;
     this.getScreenSize();
+
+    this.links = this.headerService.getLinks();
+    this.isMenuOpen = this.headerService.getMenuState();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -42,7 +27,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  count() {
-    console.log('clicked');
+  toggleMenu() {
+    this.headerService.setMenuState();
+    this.isMenuOpen = this.headerService.getMenuState();
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { iconLink } from '@models/iconLink.model';
+import { IconLink } from '@models/iconLink.model';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +7,7 @@ import { iconLink } from '@models/iconLink.model';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  links: iconLink[] = [
+  links: IconLink[] = [
     {
       iconSrc: 'assets/icons/github.svg',
       link: 'https://github.com/efrenruizrubio',

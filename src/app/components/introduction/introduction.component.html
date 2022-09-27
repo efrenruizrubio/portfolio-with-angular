@@ -1,16 +1,22 @@
 <section class="introduction">
-  <button class="introduction__translate-button">Traducir a español</button>
-  <span class="introduction__greeting">Hi! My name is</span>
+  <button class="introduction__translate-button" (click)="toggleLanguage()">
+    {{ button }}
+  </button>
+  <span class="introduction__greeting">{{ greeting }}</span>
   <h1 class="introduction__name">Efrén Ruíz.</h1>
   <h2 class="introduction__description">
-    I'm a Software Engineer focusing on Frontend.
+    {{ description }}
   </h2>
   <p class="introduction__about">
-    I'm {{ age }} years old and I'm studying at the
-    <a [href]="introductionLinks[0].link">{{ introductionLinks[0].content }}</a
-    >, and, at the same time, I'm taking online courses at
-    <a [href]="introductionLinks[1].link">{{ introductionLinks[1].content }}</a
-    >, which helps me to keep learning new stuff everyday.
+    {{ about[0] }}
+    <a target="_blank" [href]="introductionLinks[0].link">{{
+      introductionLinks[0].content
+    }}</a
+    >{{ about[1] }}
+    <a target="_blank" [href]="introductionLinks[1].link">{{
+      introductionLinks[1].content
+    }}</a
+    >{{ about[2] }}
   </p>
   <a class="introduction__contact" [href]="introductionLinks[2].link">{{
     introductionLinks[2].content

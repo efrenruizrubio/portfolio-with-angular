@@ -1,11 +1,53 @@
 <header class="header">
   <img class="header__logo" src="assets/icons/logo.svg" alt="Webpage Logo" />
-  <aside *ngIf="screenWidth < 768; else elseHeader">
-    <nav></nav>
+  <aside
+    [class.active]="isMenuOpen"
+    class="header__aside"
+    *ngIf="screenWidth < 768; else elseHeader"
+  >
+    <nav class="header__aside__nav">
+      <ul class="header__aside__nav__list">
+        <li
+          class="header__aside__nav__list__element"
+          *ngFor="let link of links; index as i"
+        >
+          <ng-container *ngIf="link.content !== 'Resume'; else elseLink">
+            <span class="header__aside__nav__list__element__number"
+              >0{{ i + 1 }}.</span
+            >
+            <br />
+            <a
+              class="header__aside__nav__list__element__link"
+              [href]="link.link"
+              (click)="toggleMenu()"
+              >{{ link.content }}</a
+            >
+          </ng-container>
+          <ng-template #elseLink>
+            <a
+              class="header__aside__nav__list__element__link resume"
+              [href]="link.link"
+              target="_blank"
+              >{{ link.content }}</a
+            >
+          </ng-template>
+        </li>
+      </ul>
+    </nav>
+    <button
+      class="header__aside__close-button"
+      aria-label="Close button"
+      (click)="toggleMenu()"
+    ></button>
   </aside>
-  <button type="button" class="nav-toggle" aria-label="Abrir menú">
-    <!-- (click)="count()" -->
-    <span class="hamburger"></span>
+  <button
+    *ngIf="screenWidth < 768"
+    type="button"
+    class="nav-toggle"
+    aria-label="Abrir menú"
+    (click)="toggleMenu()"
+  >
+    <span [class.nav-open]="isMenuOpen" class="hamburger"></span>
   </button>
   <ng-template #elseHeader>
     <nav></nav>
