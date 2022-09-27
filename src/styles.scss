@@ -8,6 +8,8 @@
   --secondary-grey-color: #a9a297;
   --primary-border-color: #1c2a43;
   --secondary-border-color: #41629b;
+  --ff-main: "Ubuntu", sans-serif;
+  --ff-secondary: "Roboto Mono", monospace;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap");
@@ -50,4 +52,17 @@ h3 {
   margin: 2rem 0;
   display: flex;
   align-items: center;
+  &__number {
+    font-size: 1.6rem;
+    color: var(--primary-green-color);
+  }
+  &__content {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    color: var(--secondary-blue-color);
+  }
+  & hr {
+    width: 100%;
+    border: 1px solid var(--primary-border-color);
+  }
 }

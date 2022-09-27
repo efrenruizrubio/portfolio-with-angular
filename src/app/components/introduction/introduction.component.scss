@@ -12,7 +12,7 @@
     border-radius: 1rem;
     background: none;
     color: var(--secondary-blue-color);
-    font-family: "Ubuntu", sans-serif;
+    font-family: var(--ff-main);
     font-size: 1.4rem;
   }
   &__greeting {

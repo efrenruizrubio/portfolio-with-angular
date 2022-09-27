@@ -1,1 +1,15 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer__top">
+    <a href="" target="_blank" *ngFor="let link of links"
+      ><img
+        width="40"
+        height="40"
+        [src]="link.iconSrc"
+        [alt]="link.alt"
+        class="footer__top__icon"
+    /></a>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__bottom__credits">Made by Efrén Ruíz</span>
+  </div>
+</footer>

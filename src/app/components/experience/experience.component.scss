@@ -3,21 +3,7 @@
   min-width: 288px;
   margin: 0 auto;
   text-align: start;
-  &__title {
-    &__number {
-      font-size: 1.6rem;
-      color: var(--primary-green-color);
-    }
-    &__content {
-      font-size: 1.8rem;
-      white-space: nowrap;
-      color: var(--secondary-blue-color);
-    }
-    & hr {
-      width: 100%;
-      border: 1px solid var(--primary-border-color);
-    }
-  }
+
   &__slider {
     width: 100%;
     min-width: 256px;

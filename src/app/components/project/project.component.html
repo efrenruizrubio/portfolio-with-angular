@@ -1,5 +1,17 @@
-<div class="project">
-  <a href="">title</a>
-  <p>description</p>
-  <span>tags</span>
+<div
+  class="project"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(' +
+      project.background +
+      ')'
+  }"
+>
+  <a [href]="project.title.link" class="project__title" target="_blank">{{
+    project.title.name
+  }}</a>
+  <p class="project__description">{{ project.description }}</p>
+  <ul class="project__tag">
+    <li *ngFor="let tag of project.tags">{{ tag }}</li>
+  </ul>
 </div>
